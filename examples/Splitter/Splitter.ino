@@ -1,9 +1,9 @@
-#include <AltSoftSerial.h>
+#include "NeoICSerial.h"
 
 #define P_RX 8                        // Reception PIN (SoftSerial)
 #define P_TX 9                        // Transmition PIN (SoftSerial)
 
-AltSoftSerial iBUS(P_RX, P_TX);     // Software serial port for control the Bluetooth module
+NeoICSerial iBUS; //(P_RX, P_TX);     // Software serial port for control the Bluetooth module
 
 void setup()
 {
