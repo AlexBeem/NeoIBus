@@ -6,4 +6,4 @@
     доступна тут https://github.com/Cleric-K/vJoySerialFeeder/
     
 3. Файл ibustelemetry.h взят с сайта разработчика прошивки, в нём реализованные коды телеметрии для
-   разработки своих датчиков.
+   разработки своих датчиков. https://github.com/qba667/FlySkyI6/blob/master/source/source/ibustelemetry.h
