@@ -34,7 +34,13 @@ unsigned long timing;
 unsigned long t1;
 unsigned long t2;
 uint16_t t_convert = 750; // врененной цикл запроса температуры, мин. 750
-
+uint32_t s85 = 1000; // s87, s88, s89, s8a = 73887388;
+uint32_t s86 = 2000;
+uint32_t s87 = 3000;
+uint32_t s88 = 4000;
+uint32_t s89 = 5000;
+uint32_t s8a = 7388;
+uint32_t pres = 1000000;
 
 void setup()
 {
@@ -55,7 +61,15 @@ void setup()
   /*6*/ telemetry.addSensor(IBUS_MEAS_TYPE_FLIGHT_MODE);
   /*7*/ telemetry.addSensor(IBUS_MEAS_TYPE_ALT);
   /*8*/ telemetry.addSensor(IBUS_MEAS_TYPE_GPS_LON);
+  /*9*/ telemetry.addSensor(IBUS_MEAS_TYPE_S85);
+  /*10*/ telemetry.addSensor(IBUS_MEAS_TYPE_S86);
+  /*11*/ telemetry.addSensor(IBUS_MEAS_TYPE_S87);
+  /*12*/ telemetry.addSensor(IBUS_MEAS_TYPE_S88);
+  /*13*/ telemetry.addSensor(IBUS_MEAS_TYPE_S89);
+  /*14*/ telemetry.addSensor(IBUS_MEAS_TYPE_S8a);
+  /*15*/ telemetry.addSensor(IBUS_MEAS_TYPE_ALT_MAX);
 
+  
   pinMode(3, OUTPUT);
   digitalWrite(3, HIGH);
   int ii = 0;
@@ -186,8 +200,15 @@ void updateValues()
     // LAND   9
 
     telemetry.setSensorValueFP(7, 504.87);
-    telemetry.setSensorValue(8, 420482790); 
-
+    telemetry.setSensorValue(8, 420482790);
+    telemetry.setSensorValue(9, s85);
+    telemetry.setSensorValue(10, s86);
+    telemetry.setSensorValue(11, s87);
+    telemetry.setSensorValue(12, s88);
+    telemetry.setSensorValue(13, s89);
+    telemetry.setSensorValue(14, s8a);
+    telemetry.setSensorValue(15, pres);
+    
     i += 0.1;
     if (i > 50)
       i = 0;
