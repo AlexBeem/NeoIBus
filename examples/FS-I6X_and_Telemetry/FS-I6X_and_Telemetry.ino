@@ -1,4 +1,5 @@
 // #define DEBUG // В рабочей версии замаркировать определение
+// максимальное число параметров в канале телеметрии - 15
 
 #include <iBUSTelemetry.h>
 #include "NeoIBus.h"             // SoftIBus library
